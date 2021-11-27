@@ -1,0 +1,637 @@
+{
+	"info": {
+		"_postman_id": "cf9249b3-1577-45c8-a62a-85317194f4e0",
+		"name": "nttdata",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "FindClient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/client",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindByIdClient",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Carlos\",\r\n    \"type\" : \"PERSONAL\",\r\n    \"identityNumber\" : \"10000001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/client/6196f0aab3c9d3812f24bd70",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"client",
+								"6196f0aab3c9d3812f24bd70"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateClientPersonal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Carlos\",\r\n    \"type\" : \"PERSONAL\",\r\n    \"identityNumber\" : \"87654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/client",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateClientEmpresarial",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"NTTDATA\",\r\n    \"type\" : \"EMPRESARIAL\",\r\n    \"identityNumber\" : \"2087654321122\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/client",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateClient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Carlos\",\r\n    \"type\" : \"PERSONAL\",\r\n    \"identityNumber\" : \"10000001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/client/6196f0aab3c9d3812f24bd70",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"client",
+								"6196f0aab3c9d3812f24bd70"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteClient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/client/6196f0aab3c9d3812f24bd70",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"client",
+								"6196f0aab3c9d3812f24bd70"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProductAhorro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\" : \"AHORRO\",\r\n    \"productType\" : \"PASIVO\",\r\n    \"condition\" : {\r\n        \"customerTypeTarget\": [\"PERSONAL\"],\r\n        \"hasMaintenanceFee\" : false,\r\n        \"maintenanceFee\" : 0,\r\n        \"hasMonthlyTransactionLimit\" : true,\r\n        \"monthlyTransactionLimit\" : 3,\r\n        \"hasDailyWithdrawalTransactionLimit\" : false,\r\n        \"dailyWithdrawalTransactionLimit\" : 0,\r\n        \"hasDailyDepositTransactionLimit\" : false,\r\n        \"dailyDepositTransactionLimit\": 0,\r\n        \"productPerPersonLimit\" : 1,\r\n        \"productPerBusinessLimit\" : 0\r\n\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProductCorriente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\" : \"CUENTA CORRIENTE\",\r\n    \"productType\" : \"PASIVO\",\r\n    \"condition\" : {\r\n        \"customerTypeTarget\": [\"PERSONAL\",\"EMPRESARIAL\"],\r\n        \"hasMaintenanceFee\" : true,\r\n        \"maintenanceFee\" : 5,\r\n        \"hasMonthlyTransactionLimit\" : false,\r\n        \"monthlyTransactionLimit\" : 0,\r\n        \"hasDailyWithdrawalTransactionLimit\" : false,\r\n        \"dailyWithdrawalTransactionLimit\" : 0,\r\n        \"hasDailyDepositTransactionLimit\" : false,\r\n        \"dailyDepositTransactionLimit\": 0,\r\n        \"productPerPersonLimit\" : 1,\r\n        \"productPerBusinessLimit\" : 999999\r\n\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProductPlazoFijo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\" : \"PLAZO FIJO\",\r\n    \"productType\" : \"PASIVO\",\r\n    \"condition\" : {\r\n        \"customerTypeTarget\": [\"PERSONAL\"],\r\n        \"hasMaintenanceFee\" : false,\r\n        \"maintenanceFee\" : 0,\r\n        \"hasMonthlyTransactionLimit\" : true,\r\n        \"monthlyTransactionLimit\" : 1,\r\n        \"hasDailyWithdrawalTransactionLimit\" : true,\r\n        \"dailyWithdrawalTransactionLimit\" : 1,\r\n        \"hasDailyDepositTransactionLimit\" : true,\r\n        \"dailyDepositTransactionLimit\": 1,\r\n        \"productPerPersonLimit\" : 1,\r\n        \"productPerBusinessLimit\" : 0\r\n\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProductPersonal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\" : \"CREDITO PERSONAL\",\r\n    \"productType\" : \"ACTIVO\",\r\n    \"condition\" : {\r\n        \"customerTypeTarget\": [\"PERSONAL\"],\r\n        \"hasMaintenanceFee\" : false,\r\n        \"maintenanceFee\" : 0,\r\n        \"hasMonthlyTransactionLimit\" : false,\r\n        \"monthlyTransactionLimit\" : 0,\r\n        \"hasDailyWithdrawalTransactionLimit\" : false,\r\n        \"dailyWithdrawalTransactionLimit\" : 0,\r\n        \"hasDailyDepositTransactionLimit\" : false,\r\n        \"dailyDepositTransactionLimit\": 0,\r\n        \"productPerPersonLimit\" : 1,\r\n        \"productPerBusinessLimit\" : 0\r\n\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProductEmpresarial",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\" : \"CREDITO EMPRESARIAL\",\r\n    \"productType\" : \"ACTIVO\",\r\n    \"condition\" : {\r\n        \"customerTypeTarget\": [\"EMPRESARIAL\"],\r\n        \"hasMaintenanceFee\" : false,\r\n        \"maintenanceFee\" : 0,\r\n        \"hasMonthlyTransactionLimit\" : false,\r\n        \"monthlyTransactionLimit\" : 0,\r\n        \"hasDailyWithdrawalTransactionLimit\" : false,\r\n        \"dailyWithdrawalTransactionLimit\" : 0,\r\n        \"hasDailyDepositTransactionLimit\" : false,\r\n        \"dailyDepositTransactionLimit\": 0,\r\n        \"productPerPersonLimit\" : 0,\r\n        \"productPerBusinessLimit\" : 999999\r\n\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProductTarjetaCredito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\" : \"TARJETA DE CREDITO\",\r\n    \"productType\" : \"ACTIVO\",\r\n    \"condition\" : {\r\n        \"customerTypeTarget\": [\"PERSONAL\",\"EMPRESARIAL\"],\r\n        \"hasMaintenanceFee\" : false,\r\n        \"maintenanceFee\" : 0,\r\n        \"hasMonthlyTransactionLimit\" : false,\r\n        \"monthlyTransactionLimit\" : 0,\r\n        \"hasDailyWithdrawalTransactionLimit\" : false,\r\n        \"dailyWithdrawalTransactionLimit\" : 0,\r\n        \"hasDailyDepositTransactionLimit\" : false,\r\n        \"dailyDepositTransactionLimit\": 0,\r\n        \"productPerPersonLimit\" : 1,\r\n        \"productPerBusinessLimit\" : 1\r\n\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProductPlazoFijo Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\" : \"PLAZO FIJO\",\r\n    \"productType\" : \"PASIVO\",\r\n    \"condition\" : {\r\n        \"customerTypeTarget\": [\"PERSONAL\"],\r\n        \"hasMaintenanceFee\" : false,\r\n        \"maintenanceFee\" : 0,\r\n        \"hasMonthlyTransactionLimit\" : true,\r\n        \"monthlyTransactionLimit\" : 1,\r\n        \"hasDailyWithdrawalTransactionLimit\" : true,\r\n        \"dailyWithdrawalTransactionLimit\" : 1,\r\n        \"hasDailyDepositTransactionLimit\" : true,\r\n        \"dailyDepositTransactionLimit\": 1,\r\n        \"productPerPersonLimit\" : 1,\r\n        \"productPerBusinessLimit\" : 0\r\n\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/product/619c152ef884c45acd47c0a2",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"product",
+								"619c152ef884c45acd47c0a2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "CreateTransaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"transactionType\" : \"deposito\",\r\n    \"transactionAmount\" : 50,\r\n    \"cardNumber\" : \"4551805235241265\",\r\n    \"description\" : \"Primer Deposito\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8092/transaction",
+							"host": [
+								"localhost"
+							],
+							"port": "8092",
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindTransaction",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"transactionType\" : \"retiro\",\r\n    \"transactionAmount\" : 20.5,\r\n    \"cardNumber\" : \"455180523524126\",\r\n    \"description\" : \"Primer Retiro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8092/transaction",
+							"host": [
+								"localhost"
+							],
+							"port": "8092",
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Withdrawal",
+			"item": [
+				{
+					"name": "CreateWithdrawal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\" : 50,\r\n    \"cardNumber\" : \"4551805235241265\",\r\n    \"description\" : \"Primer Retiro\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8093/withdrawal",
+							"host": [
+								"localhost"
+							],
+							"port": "8093",
+							"path": [
+								"withdrawal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindWithdrawal",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8093/withdrawal",
+							"host": [
+								"localhost"
+							],
+							"port": "8093",
+							"path": [
+								"withdrawal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Deposito",
+			"item": [
+				{
+					"name": "CreateDeposit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\" : 60,\r\n    \"cardNumber\" : \"45518052352497921\",\r\n    \"description\" : \"Primer Deposito\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8094/deposit",
+							"host": [
+								"localhost"
+							],
+							"port": "8094",
+							"path": [
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindDeposit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8094/deposit",
+							"host": [
+								"localhost"
+							],
+							"port": "8094",
+							"path": [
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PaymentProduct",
+			"item": [
+				{
+					"name": "CreatePaymentProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\" : 180,\r\n    \"cardNumber\" : \"45518052352497921\",\r\n    \"description\" : \"Primer pago de producto\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8095/payment",
+							"host": [
+								"localhost"
+							],
+							"port": "8095",
+							"path": [
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindPaymentProduct",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8095/payment",
+							"host": [
+								"localhost"
+							],
+							"port": "8095",
+							"path": [
+								"payment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
